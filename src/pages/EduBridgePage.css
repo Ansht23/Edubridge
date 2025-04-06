@@ -1,0 +1,236 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #e0e0e0;
+  background-color: #121212;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Landing Section */
+.landing-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: url("https://img.freepik.com/premium-photo/two-female-designers-looking-sketches_236854-18594.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+}
+
+.landing-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 0;
+}
+
+.content-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 5%;
+  position: relative;
+  z-index: 1;
+}
+
+.text-section {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 5px;
+}
+
+.badge {
+  margin: 0;
+  color: #fe7f2d;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.heading {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 20px;
+  color: #cccccc;
+  text-align: justify;
+}
+
+.join-button {
+  padding: 12px 24px;
+  background: #fe7f2d;
+  color: #121212;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.join-button:hover {
+  background: #ff9b4a;
+}
+
+/* Features Section */
+.features {
+  position: relative;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  text-align: center;
+  padding: 60px 5%;
+  height: 100vh;
+}
+
+.features h2 {
+  font-size: 32px;
+  color: #fe7f2d;
+  margin-bottom: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.cards {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.cards:hover {
+  transform: translateY(-5px);
+}
+
+.faq-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 50px auto 0 auto;
+}
+
+.faq-box {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.faq-box:hover {
+  transform: translateY(-5px);
+}
+
+.features::before,
+.faq::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, #fe7f2d, #233d4d, #2d3142, #fe7f2d);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  z-index: 0;
+  opacity: 0.1; /* subtle glow */
+}
+
+.features > *,
+.faq > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 10%;
+  text-align: center;
+}
+
+footer div {
+  margin: 5px;
+}
+
+.footer-left h3 {
+  font-size: larger;
+  font-weight: bold;
+  min-width: 300px;
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.3s;
+}
+.animate-delay-2 {
+  animation-delay: 0.6s;
+}
+.animate-delay-3 {
+  animation-delay: 0.9s;
+}
+.animate-delay-4 {
+  animation-delay: 1.2s;
+}

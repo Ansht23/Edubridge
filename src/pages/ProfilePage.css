@@ -1,0 +1,108 @@
+/* General Layout */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1c1c1c;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  height: 100vh;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+.sidebar ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  
+}
+
+.sidebar ul li:hover {
+  background-color: #333;
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.storage {
+  margin-top: 20px;
+}
+
+.upgrade-btn {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main Content */
+.dashboard-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  padding: 8px;
+  width: 200px;
+}
+
+.storage-overview, .welcome {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #222;
+  padding: 20px;
+  flex: 1;
+  border-radius: 8px;
+}
+
+/* Task Tracker */
+.task-tracker table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.task-tracker th, .task-tracker td {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
