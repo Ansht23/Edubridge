@@ -1,7 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // 👈 Add this
 import "./EduBridgePage.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTasks,
+  faChalkboardTeacher,
+  faShareAlt,
+} from "@fortawesome/free-solid-svg-icons";
 
 const EduBridgePage = () => {
+  const navigate = useNavigate();
   return (
     <div className="edubridge">
       {/* Landing Section */}
@@ -20,10 +28,7 @@ const EduBridgePage = () => {
               </p>
               <button
                 className="join-button animate animate-delay-4"
-                onClick={() => {
-                  document
-                    .querySelector("./Signuppage.js")
-                }}
+                onClick={() => navigate("/signup")}
               >
                 Join Now
               </button>
@@ -37,7 +42,7 @@ const EduBridgePage = () => {
         <h2>Why Choose EduBridge?</h2>
         <div className="cards-container">
           <div className="cards">
-            <i className="fas fa-tasks icon"></i>
+            <FontAwesomeIcon icon={faTasks} className="icon" />
             <h3>Task Tracker</h3>
             <p>
               Efficiently manage your tasks and stay organized with our
@@ -45,15 +50,16 @@ const EduBridgePage = () => {
             </p>
           </div>
           <div className="cards">
-            <i className="fas fa-user-check icon"></i>
-            <h3>Attendance Record</h3>
+            <FontAwesomeIcon icon={faChalkboardTeacher} className="icon" />
+            <h3>Classroom Feature</h3>
             <p>
-              Keep accurate attendance records, even remotely, using our
-              user-friendly tools.
+              Access all your class resources shared by teachers—organized,
+              instant, and always available.
             </p>
           </div>
+
           <div className="cards">
-            <i className="fas fa-share-alt icon"></i>
+            <FontAwesomeIcon icon={faShareAlt} className="icon" />
             <h3>Resource Sharing</h3>
             <p>
               Collaborate and share resources effortlessly with fellow
@@ -122,18 +128,10 @@ const EduBridgePage = () => {
 
       {/* Footer */}
       <footer>
-        <div className="footer-left">
-          <h3>EduBridge</h3>
-          <p>Connecting educators worldwide.</p>
-        </div>
-
-        <div className="footer-right">
+        <div className="footer-content">
+          <h3>EduBridge: The Real-Time Teachers' Forum</h3>
           <p>
-            <strong>Contact Us</strong>
-            <br />
-            Email: support@edubridge.com
-            <br />
-            Phone: +1 234 567 890
+            &copy; {new Date().getFullYear()} EduBridge. All rights reserved.
           </p>
         </div>
       </footer>

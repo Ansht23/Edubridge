@@ -77,12 +77,17 @@
   width: 100%;
   top: 0;
   left: 0;
-  padding: 40px 30px;
+  padding: 40px 30px 20px; /* Enough bottom padding */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   backdrop-filter: blur(15px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   transition: transform 0.5s ease, opacity 0.4s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .student-form {
@@ -147,11 +152,12 @@
 .show-password {
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* Align to the left */
   gap: 10px;
   margin-bottom: 20px;
   font-weight: bold;
   color: #94a3b8;
-  cursor: pointer;
+  width: 100%; /* Take full width of the form */
 }
 
 .show-password input[type="checkbox"] {
@@ -160,10 +166,13 @@
   cursor: pointer;
 }
 
+
 .login-link {
-  margin-top: 20px;
+  margin-top: -50px; /* Subtle spacing */
   color: #94a3b8;
+  font-size: 0.95rem;
   z-index: 1;
+  text-align: center;
 }
 
 .login-link a {
