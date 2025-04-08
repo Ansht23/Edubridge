@@ -22,8 +22,7 @@ const EduBridgePage = () => {
                 className="join-button animate animate-delay-4"
                 onClick={() => {
                   document
-                    .querySelector(".features")
-                    .scrollIntoView({ behavior: "smooth" });
+                    .querySelector("./Signuppage.js")
                 }}
               >
                 Join Now

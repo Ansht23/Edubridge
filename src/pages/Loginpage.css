@@ -1,78 +1,117 @@
-.login-page{
+.login-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #000;
-    color: #fff;
-}
-
-.login-page h1{
-    margin-bottom: 20px;
-    font-size: 2rem;
+    min-height: 100vh;
+    position: relative;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    overflow: hidden;
+    color: #e0f2fe;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Ambient Glow Animation */
+  .login-page::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(94, 234, 212, 0.08), transparent),
+                radial-gradient(circle at 70% 70%, rgba(165, 180, 252, 0.08), transparent);
+    animation: drift 25s linear infinite;
+    z-index: 0;
+  }
+  
+  @keyframes drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(25%, 25%); }
+  }
+  
+  .login-page h1 {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
     text-align: center;
-    color: #fff;
-}
-
-.login-page form{
+    color: #e0f2fe;
+    z-index: 1;
+  }
+  
+  .login-page form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #222;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.login-page input[type="email"], input[type="password"]{
-    width: 250px;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #fff;
-    background-color: transparent;
-    color: #fff;
-    border-radius: 4px;
-}
-
-.login-page input[type="email"]::placeholder, input[type="password"]::placeholder{
-    color: #ccc;
-}
-
-.login-page input[type="email"]:focus, input[type="password"]:focus{
-    outline: none;
-    border-color: #f0f0f0;
-}
-
-.login-page button[type="submit"]{
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    z-index: 1;
     width: 100%;
-    padding: 10px;
-    background-color: #fff;
-    color: #000;
+    max-width: 380px;
+  }
+  
+  .login-page input[type="email"],
+  .login-page input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
     border: none;
-    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #e0f2fe;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
     cursor: pointer;
+  }
+  
+  .login-page input[type="email"]::placeholder,
+  .login-page input[type="password"]::placeholder {
+    color: #94a3b8;
+  }
+  
+  .login-page input[type="email"]:focus,
+  .login-page input[type="password"]:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .login-page button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #0f172a;
     font-weight: bold;
-}
-
-.login-page button[type="submit"]:hover{
-    background-color: #f0f0f0;
-}
-
-.login-page .signup-link{
-    margin-top: 15px;
-}
-
-.login-page .signup-link p{
-    color: #ccc;
-}
-
-.login-page .signup-link a{
-    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-page button[type="submit"]:hover {
+    background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  }
+  
+  .login-page .signup-link {
+    margin-top: 20px;
+    z-index: 1;
+  }
+  
+  .login-page .signup-link p {
+    color: #94a3b8;
+  }
+  
+  .login-page .signup-link a {
+    color: #38bdf8;
     text-decoration: none;
     font-weight: bold;
-}
-
-.login-page.signup-link a:hover{
-    color: #f0f0f0;
-}
+    cursor: pointer;
+  }
+  
+  .login-page .signup-link a:hover {
+    color: #0ea5e9;
+  }
+  

@@ -1,110 +1,177 @@
-.signup-page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #000;
-    color: #fff;
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  overflow: hidden;
+  color: #e0f2fe;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.signup-page h1{
-    margin-bottom: 20px;
-    font-size: 2rem;
-    text-align: center;
-    color: #fff;
+/* Soft Aurora background animation */
+.signup-page::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(94, 234, 212, 0.1),
+      transparent
+    ),
+    radial-gradient(circle at 70% 70%, rgba(165, 180, 252, 0.1), transparent);
+  animation: drift 20s linear infinite;
+  z-index: 0;
 }
 
-.signup-page form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #222;
-    padding: 30px;
-    border-radius: 8px;
-    font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(25%, 25%);
+  }
 }
 
-.signup-page input[type="email"], input[type="password"],input[type="name"],input[type="text"]{
-    width: 250px;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #fff;
-    background-color: transparent;
-    color: white;
-    border-radius: 4px;
-    font-weight: bold;
+.signup-page h1 {
+  font-size: 2.8rem;
+  margin-bottom: 24px;
+  z-index: 1;
 }
 
-.signup-page input[type="email"]{
-    width: 250px;
-    margin-left: 0px;
-}
-.signup-page select{
-    width: 250px;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #fff;
-    background-color: transparent;
-    color: #fff;
-    border-radius: 4px;
-    font-weight: bold;
+.toggle-btn {
+  padding: 10px 22px;
+  margin-bottom: 24px;
+  border: 2px solid #38bdf8;
+  border-radius: 10px;
+  background: transparent;
+  color: #38bdf8;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
 }
 
-.signup-page input[type="email"]::placeholder, input[type="password"]::placeholder,input[type="text"]::placeholder{
-    color: #ccc;
-    font-weight: bold;
+.toggle-btn:hover {
+  background: #38bdf8;
+  color: #0f172a;
 }
 
-
-.signup-page input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus{
-    outline: none;
-    border-color: #f0f0f0;
-    font-weight: bold;
+.form-slider {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  overflow: hidden;
+  min-height: 720px;
+  z-index: 1;
 }
 
-.signup-page button[type="button"]{
-    /* width: 100%; */
-    padding: 10px;
-    margin: 10px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.signup-page button[type="submit"]{
-    width: 250px;
-    padding: 10px;
-    margin: 10px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
+.form-panel {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.5s ease, opacity 0.4s ease;
 }
 
-.signup-page button[type="submit"]:hover{
-    background-color: #f0f0f0;
+.student-form {
+  transform: translateX(0%);
+  z-index: 1;
+  opacity: 1;
 }
 
-.signup-page .login-link{
-    margin-top: 15px;
+.teacher-form {
+  transform: translateX(100%);
+  z-index: 0;
+  opacity: 0;
 }
 
-.signup-page .login-link p{
-    color: #ccc;
+.form-slider.slide-left .student-form {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 0;
 }
 
-.signup-page .login-link a{
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+.form-slider.slide-left .teacher-form {
+  transform: translateX(0%);
+  opacity: 1;
+  z-index: 1;
 }
 
-.signup-page.login-link a:hover{
-    color: #f0f0f0;
+.form-panel input,
+.form-panel button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0f2fe;
+  backdrop-filter: blur(6px);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.form-panel input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-panel input::placeholder {
+  color: #94a3b8;
+}
+
+.form-panel button {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #0f172a;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.form-panel button:hover {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+}
+
+.show-password {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.show-password input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.login-link {
+  margin-top: 20px;
+  color: #94a3b8;
+  z-index: 1;
+}
+
+.login-link a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  color: #0ea5e9;
 }

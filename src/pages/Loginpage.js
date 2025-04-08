@@ -43,7 +43,7 @@ const Loginpage = () => {
       }
 
     } catch (error) {
-      toast.error('An error occured during login');
+      toast.error('An error occurred during login');
     }
     finally {
       setLoading(false);
@@ -63,7 +63,7 @@ const Loginpage = () => {
         />
         <input
           type='password'
-          placeholder='password'
+          placeholder='Password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required

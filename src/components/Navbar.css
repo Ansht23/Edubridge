@@ -12,7 +12,6 @@
 .navbar-left {
   display: flex;
   position: relative;
-
   align-items: center;
 }
 
@@ -65,12 +64,7 @@
   opacity: 1 !important;
 }
 
-.profile-icon-svg {
-  width: 32px; /* Set width */
-  height: 32px; /* Set height */
-  stroke: white; /* Ensures visibility */
-  fill: none;
-}
+
 
 /* Logout button styling */
 .logout-btn {
